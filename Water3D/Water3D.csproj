@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{81C3E5FA-4847-4378-9747-390CF8462803}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Water3D</RootNamespace>
+    <AssemblyName>Water3D</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaCrossPlatformGroupID>cd3ce9df-d2ef-4007-9f1b-8245956ed190</XnaCrossPlatformGroupID>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <XnaUpgrade>
+    </XnaUpgrade>
+    <XnaOutputType>Game</XnaOutputType>
+    <XnaProfile>HiDef</XnaProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>True</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Video, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera.cs" />
+    <Compile Include="CodeWindow.cs" />
+    <Compile Include="CompileEventArgs.cs" />
+    <Compile Include="CompileEventHandler.cs" />
+    <Compile Include="Console.cs" />
+    <Compile Include="Cursor.cs" />
+    <Compile Include="DebugDraw.cs" />
+    <Compile Include="EffectContainer.cs" />
+    <Compile Include="EffectContentProcessorContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EffectManager.cs" />
+    <Compile Include="GraphicsSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Level3D.cs" />
+    <Compile Include="Object3DSettings.cs" />
+    <Compile Include="Tools3D.cs" />
+    <Compile Include="FPSCounter.cs" />
+    <Compile Include="FunctionCompiler.cs" />
+    <Compile Include="ParticleSystems\ExplosionParticleSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParticleSystems\ExplosionSmokeParticleSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParticleSystems\ProjectileTrailParticleSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuadtreeNode.cs" />
+    <Compile Include="LandscapeGeomipmap.cs" />
+    <Compile Include="PatchGeomipmap.cs" />
+    <Compile Include="Model3DSkinned.cs" />
+    <Compile Include="Landscape.cs" />
+    <Compile Include="LandscapeROAM.cs" />
+    <Compile Include="Model3D.cs" />
+    <Compile Include="Object3D.cs" />
+    <Compile Include="ParticleEmitter.cs" />
+    <Compile Include="ParticleSettings.cs" />
+    <Compile Include="ParticleSystem.cs" />
+    <Compile Include="VertexDeclarations\ParticleVertex.cs" />
+    <Compile Include="Patch.cs" />
+    <Compile Include="PatchROAM.cs" />
+    <Compile Include="Physics.cs" />
+    <Compile Include="Plane3D.cs" />
+    <Compile Include="Projectile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Quadtree.cs" />
+    <Compile Include="RenderEngine.cs" />
+    <Compile Include="SceneContainer.cs" />
+    <Compile Include="Skybox.cs" />
+    <Compile Include="StatusWindow.cs" />
+    <Compile Include="TextInput.cs" />
+    <Compile Include="TextureManager.cs" />
+    <Compile Include="TextureRenderer.cs" />
+    <Compile Include="TriTreeNode.cs" />
+    <Compile Include="VertexDeclarations\PositionNormalColor.cs" />
+    <Compile Include="VertexDeclarations\PositionNormalColorMultiTexture.cs" />
+    <Compile Include="VertexDeclarations\PositionNormalMultiTexture.cs" />
+    <Compile Include="Water3D.cs" />
+    <Compile Include="Window2D.cs" />
+    <None Include="app.config" />
+    <None Include="Effects\BumpMap2.fx" />
+    <None Include="Effects\BumpMap3.fx" />
+    <None Include="Effects\HelloWorld.fx" />
+    <None Include="Effects\Landscape.fx" />
+    <None Include="Effects\Particle.fx" />
+    <None Include="Effects\Particle.fx.bak" />
+    <None Include="Effects\Phong.fx" />
+    <None Include="Effects\ReflProj.fx" />
+    <None Include="Effects\SkinnedModel.fx" />
+    <None Include="Effects\Water.fx" />
+    <None Include="Media\Bumpmaps\Thumbs.db" />
+    <None Include="Media\Cubemaps\skybox.dds" />
+    <None Include="Media\Cubemaps\Thumbs.db" />
+    <None Include="Media\Heightmaps\1.RAW">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Media\Meshes\mesh.x" />
+    <None Include="Media\Skybox\Thumbs.db" />
+    <None Include="Media\Textures\NoiseVolume.dds" />
+    <None Include="Media\Textures\Thumbs.db" />
+    <None Include="Media\Textures\waves2.dds" />
+    <None Include="q3dm1.bsp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="q3dm17.bsp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EffectXml\ExplosionParticleSystem.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EffectXml\ExplosionSmokeParticleSystem.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EffectXml\BasicLandscape.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EffectXml\BasicWater.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EffectXml\Basic.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EffectXml\XWing.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EffectXml\Patch.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EffectXml\ProjectileTrailParticleSystem.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EffectXml\Landscape1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EffectXml\Landscape.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EffectXml\SkinnedModel.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EffectXml\Water.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Game.ico" />
+    <Content Include="GameThumbnail.png" />
+    <Content Include="Logs\log.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Bumpmaps\bumpmap.bmp" />
+    <Content Include="Media\Lightmaps\heightmap_lm.bmp" />
+    <Content Include="Media\Skybox\skybox0001.bmp" />
+    <Content Include="Media\Skybox\skybox0002.bmp" />
+    <Content Include="Media\Skybox\skybox0003.bmp" />
+    <Content Include="Media\Skybox\skybox0004.bmp" />
+    <Content Include="Media\Skybox\skybox0005.bmp" />
+    <Content Include="Media\Skybox\skybox0006.bmp" />
+    <Content Include="Media\Textures\caustics_001.jpg" />
+    <Content Include="Media\Textures\caustics_002.jpg" />
+    <Content Include="Media\Textures\caustics_003.jpg" />
+    <Content Include="Media\Textures\caustics_004.jpg" />
+    <Content Include="Media\Textures\caustics_005.jpg" />
+    <Content Include="Media\Textures\caustics_006.jpg" />
+    <Content Include="Media\Textures\caustics_007.jpg" />
+    <Content Include="Media\Textures\caustics_008.jpg" />
+    <Content Include="Media\Textures\caustics_009.jpg" />
+    <Content Include="Media\Textures\caustics_010.jpg" />
+    <Content Include="Media\Textures\caustics_011.jpg" />
+    <Content Include="Media\Textures\caustics_012.jpg" />
+    <Content Include="Media\Textures\caustics_013.jpg" />
+    <Content Include="Media\Textures\caustics_014.jpg" />
+    <Content Include="Media\Textures\caustics_015.jpg" />
+    <Content Include="Media\Textures\caustics_016.jpg" />
+    <Content Include="Media\Textures\heightmap_cm.bmp" />
+    <Content Include="Media\Textures\terrain_base_texture.jpg" />
+    <Content Include="Media\Textures\terrain_detail_texture.jpg" />
+    <Content Include="Media\Textures\test.png" />
+    <Content Include="Media\Textures\test2_cm.bmp" />
+    <Content Include="Media\Textures\test2_lm.bmp" />
+    <Content Include="Media\Textures\test_cm.bmp" />
+    <Content Include="Media\Textures\test_lm.bmp" />
+    <Content Include="Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scenes\Scene.xml" />
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <NestedContentProject Include="Content\Content.contentproj">
+      <Project>e92dfd4f-5cdf-4b39-a903-73686f825aaf</Project>
+      <Visible>False</Visible>
+    </NestedContentProject>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.3.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomModelAnimation\CustomModelAnimation.csproj">
+      <Project>{0D41E29B-829F-4255-BCA5-64DC2677DA6D}</Project>
+      <Name>CustomModelAnimation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OwnFunctions\OwnFunctions.csproj">
+      <Project>{84E09560-AB0E-4D9D-95F5-7291F24C0F86}</Project>
+      <Name>OwnFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XNAQ3Lib.MD5\XNAQ3Lib.MD5.csproj">
+      <Project>{1366dd92-7f1c-4da9-a6f5-bc233bfe28cc}</Project>
+      <Name>XNAQ3Lib.MD5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XNAQ3Lib.Q3BSP\XNAQ3Lib.Q3BSP.csproj">
+      <Project>{a4e381a6-46cb-434f-8794-e73460c0c1c8}</Project>
+      <Name>XNAQ3Lib.Q3BSP</Name>
+    </ProjectReference>
+    <ProjectReference Include="Content\Water3DContent.contentproj">
+      <Project>{E92DFD4F-5CDF-4B39-A903-73686F825AAF}</Project>
+      <Name>Water3DContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

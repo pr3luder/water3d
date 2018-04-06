@@ -1,0 +1,13 @@
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationPipeline.dll
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationPipeline.pdb
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationWindows.dll
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationWindows.pdb
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\obj\x86\Debug\CustomModelAnimationPipeline.csprojResolveAssemblyReference.cache
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\obj\x86\Debug\CustomModelAnimationPipeline.dll
+D:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\obj\x86\Debug\CustomModelAnimationPipeline.pdb
+G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationPipeline.dll
+G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationPipeline.pdb
+G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationWindows.dll
+G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationWindows.pdb
+G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\obj\x86\Debug\CustomModelAnimationPipeline.dll
+G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\obj\x86\Debug\CustomModelAnimationPipeline.pdb

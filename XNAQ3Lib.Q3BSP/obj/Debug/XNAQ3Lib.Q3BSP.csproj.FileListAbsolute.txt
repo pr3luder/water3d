@@ -1,0 +1,14 @@
+E:\projects\privat\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.dll
+E:\projects\privat\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.pdb
+E:\projects\privat\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\privat\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.dll
+E:\projects\privat\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.pdb
+D:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.dll
+D:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.pdb
+D:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.dll
+D:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.pdb
+G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.dll
+G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.pdb
+G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.dll
+G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.pdb
+G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\obj\Debug\XNAQ3Lib.Q3BSP.csprojResolveAssemblyReference.cache
