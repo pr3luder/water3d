@@ -20,7 +20,7 @@
       <Time>2015-11-11T16:45:29.1327145+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\dude_0.xml</Key>
-        <Value>2018-03-02T16:14:12.9028655+01:00</Value>
+        <Value>2018-05-24T15:46:40.5564167+02:00</Value>
       </Dependency>
       <Request>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\bin\x86\Debug\Content\Models\head_0.xnb</Request>
       <Request>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\bin\x86\Debug\Content\Models\SkinnedModel_0.xnb</Request>
@@ -38,7 +38,7 @@
       <Time>2015-11-11T16:45:29.8467553+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2018-03-02T16:14:15.4411878+01:00</Value>
+        <Value>2018-05-24T15:46:43.4069867+02:00</Value>
       </Dependency>
       <Request>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\bin\x86\Debug\Content\Models\pawball_0.xnb</Request>
     </Item>
@@ -52,7 +52,7 @@
       <Time>2015-11-11T16:45:28.0866546+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\Yager_0.xml</Key>
-        <Value>2018-03-02T16:14:16.0942708+01:00</Value>
+        <Value>2018-05-24T15:46:44.0096072+02:00</Value>
       </Dependency>
       <Request>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\bin\x86\Debug\Content\Models\Texture_Yager_Green_0.xnb</Request>
       <Request>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\bin\x86\Debug\Content\Models\Yager_New_Add_1_0.xnb</Request>
@@ -67,7 +67,7 @@
       <Time>2015-11-11T16:45:28.9737054+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\test_0.xml</Key>
-        <Value>2018-03-02T16:14:17.2509176+01:00</Value>
+        <Value>2018-05-24T15:46:45.1893431+02:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -4355,7 +4355,7 @@
       <Time>2015-11-11T16:45:29.7117476+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\mesh_0.xml</Key>
-        <Value>2018-03-02T16:14:27.6002318+01:00</Value>
+        <Value>2018-05-24T15:46:58.0949237+02:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -4368,7 +4368,7 @@
       <Time>2015-11-11T16:45:29.6177422+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\Barrel_DirectX_0.xml</Key>
-        <Value>2018-03-02T16:14:28.6058595+01:00</Value>
+        <Value>2018-05-24T15:46:59.5152077+02:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -4381,7 +4381,7 @@
       <Time>2015-11-11T16:45:29.6737454+01:00</Time>
       <Dependency>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Water3D\obj\x86\Debug\Models\xwing_0.xml</Key>
-        <Value>2018-03-02T16:14:28.7548784+01:00</Value>
+        <Value>2018-05-24T15:46:59.7522551+02:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -4631,19 +4631,19 @@
     <Assemblies>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.Q3BSP\bin\Debug\XNAQ3Lib.Q3BSP.dll</Key>
-        <Value>2018-03-02T16:14:06.5350569+01:00</Value>
+        <Value>2018-05-24T15:46:34.4992055+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\XNAQ3Lib.MD5\bin\Debug\XNAQ3Lib.MD5.dll</Key>
-        <Value>2018-03-02T15:38:13.6036693+01:00</Value>
+        <Value>2018-04-20T17:12:11.1531341+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\Q3BSPContentPipelineExtension\bin\x86\Debug\Q3BSPContentPipelineExtension.dll</Key>
-        <Value>2018-03-02T16:14:07.1481347+01:00</Value>
+        <Value>2018-05-24T15:46:34.8507758+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\OwnFunctions\bin\Debug\OwnFunctions.dll</Key>
-        <Value>2018-03-02T15:38:13.3001308+01:00</Value>
+        <Value>2018-04-20T17:12:11.1586352+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
@@ -4671,7 +4671,7 @@
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\MD5ContentPipelineExtension\bin\x86\Debug\MD5ContentPipelineExtension.dll</Key>
-        <Value>2018-03-02T15:38:14.5897945+01:00</Value>
+        <Value>2018-04-20T17:12:12.1498334+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimation\bin\x86\Debug\CustomModelAnimationWindows.dll</Key>
@@ -4679,11 +4679,11 @@
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelAnimationPipeline\bin\x86\Debug\CustomModelAnimationPipeline.dll</Key>
-        <Value>2018-03-02T15:38:13.8336985+01:00</Value>
+        <Value>2018-04-20T17:12:11.7742583+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>G:\Downloads\test\privat\Projekte\Water3D 4.0\CustomModelPipeline\bin\x86\Debug\CustomEffectModelPipeline.dll</Key>
-        <Value>2018-03-02T15:38:14.6608036+01:00</Value>
+        <Value>2018-04-20T17:12:12.4683971+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>

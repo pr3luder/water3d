@@ -129,14 +129,14 @@ namespace Water3D
         public override void Draw(GameTime time)
         {
            
-            worldMatrix.Forward = -viewVector;
+            worldMatrix.Forward = viewVector;
             worldMatrix.Right = rightVector;
             worldMatrix.Up = upVector;
             worldMatrix.Translation = pos;
            
             //worldMatrix = Matrix.CreateFromQuaternion(rotationQuat) * Matrix.CreateTranslation(pos);
-            scene.Game.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
-            scene.Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            //scene.Game.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
+            //scene.Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             
             boneTransforms = skinnedAnimationPlayer.GetSkinTransforms();    
             foreach (ModelMesh mesh in model.Meshes)
@@ -161,8 +161,10 @@ namespace Water3D
                     world = boneTransforms[mesh.ParentBone.Index] * World;
                 else
                     world = boneTransforms[mesh.ParentBone.Index] * WorldBounding;
+                
                 bs = bsLocal.Transform(world);
             }
+            updateAnimation(time);
             base.Draw(time);
         }
 
@@ -178,7 +180,7 @@ namespace Water3D
             
 		}
 
-        public SkinnedAnimationPlayer AnimationPlayer
+        public SkinnedAnimationPlayer SkinnedAnimationPlayer
         {
             get 
             {

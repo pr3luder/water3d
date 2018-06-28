@@ -153,7 +153,7 @@ namespace Water3D
             consoleWindow = new ConsoleWindow(game, new Vector3(0.0f, game.GraphicsDevice.Viewport.Height - 160.0f, 0.0f), rectConsole, textColor);
             
             // initialize 3d objects
-            camera = new Camera(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height, new Vector3(134.0f, 5.0f, -23.0f), new Vector3(160.0f, 5.0f, -48.0f), new Vector3(0, 1, 0));
+            camera = new Camera(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height, new Vector3(134.0f, 1.0f, -23.0f), new Vector3(160.0f, 5.0f, -48.0f), new Vector3(0, 1, 0));
             
             /* */
             scene = new SceneContainer(camera, textureManager);
@@ -231,12 +231,12 @@ namespace Water3D
             camera.Mode = "followFree";
             camera.setObjective(modelAnim);
             camera.followObjective();
-            camera.updateObject(minimum - 5.0f, false);
+            camera.updateObject(minimum - 1.0f, false);
             camera.getObjective().PositionY = 70.0f;
             camera.getObjective().PositionY = landscape.getHeight(camera.getObjective().getPosition()) + landscape.getPosition().Y;
             camera.getObjective().moveObject(0.0f, 0.0f, -0.4f);
             camera.followObjective();
-
+            
             //modelAnim = new Model3DSkinned(game, camera, new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.05f, 0.05f, 0.05f), textureManager, "SkinnedModel.xml", "Models/dude", "Take 001");
             //modelAnim2 = new Model3DSkinned(game, camera, new Vector3(1300.0f, 5.0f, -1250.0f), new Vector3(0.05f, 0.05f, 0.05f), textureManager, "SkinnedModel.xml", "Models/dude", "Take 001");
             
@@ -244,7 +244,7 @@ namespace Water3D
 
             
             // quake 3 level
-            level = new Level3D(scene, new Vector3(1000.0f, 5.1f, -1000.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), false);
+            level = new Level3D(scene, new Vector3(1000.0f, 0.0f, -1000.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), false);
             //level = new Level3D(scene, new Vector3(0.0f, 0.0f, 0.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), false);
             
             /* old code
@@ -408,11 +408,6 @@ namespace Water3D
         {
             updateTime = gameTime;
             
-            if(camera.getObjective().GetType() == typeof(Model3DSkinned))
-            {
-                //((Model3DSkinned)camera.getObjective()).startAnimation();
-                ((Model3DSkinned)camera.getObjective()).updateAnimation(gameTime);
-            }
             if (landscape.GetType() == typeof(LandscapeGeomipmap))
             {
                 landscape.Quadtree.updateObject(camera.getObjective().getPosition());
@@ -881,12 +876,12 @@ namespace Water3D
                         }
                         if (state.Y - mouseSaveY > 0)
                         {
-                            camera.followObjective(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, -1.0f, 0.0f));
+                            camera.followObjective(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, -0.5f, 0.0f));
                             //camera.rotateAroundObjective(0.2f, camera.VRight);
                         }
                         if (state.Y - mouseSaveY < 0)
                         {
-                            camera.followObjective(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+                            camera.followObjective(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 0.5f, 0.0f));
                             //camera.rotateAroundObjective(-0.2f, camera.VRight);
                         }
 
@@ -946,13 +941,13 @@ namespace Water3D
                 {
                     if (wheelValue - wheelValueSave < 0)
                     {
-                        camera.followObjective(new Vector3(0.0f, 0.0f, 1.0f), new Vector3(0.0f, 0.0f, 0.0f));
+                        camera.followObjective(new Vector3(0.0f, 0.0f, -1.0f), new Vector3(0.0f, 0.0f, 0.0f));
                         //camera.zoomObjective(0.1f);          
                         //camera.moveObjectiveOffset(0.0f, 0.0f, 0.8f);
                     }
                     if (wheelValue - wheelValueSave > 0)
                     {
-                        camera.followObjective(new Vector3(0.0f, 0.0f, -1.0f), new Vector3(0.0f, 0.0f, 0.0f));
+                        camera.followObjective(new Vector3(0.0f, 0.0f, 1.0f), new Vector3(0.0f, 0.0f, 0.0f));
                         //camera.zoomObjective(-0.1f);
                         //camera.moveObjectiveOffset(0.0f, 0.0f, -0.8f);
                     }

@@ -48,8 +48,8 @@ namespace Water3D
             this.saveHeight = vEye.Y;
             this.mode = "free";
             this.rotation = Quaternion.Identity;
-            this.desiredPositionOffset = new Vector3(0.0f, 0.0f, 0.0f);
-            this.lookAtOffset = new Vector3(0.0f, 0.0f, 10.0f);
+            this.desiredPositionOffset = new Vector3(0.0f, -0.1f, 10.0f);
+            this.lookAtOffset = new Vector3(0.0f, 0.0f, 0.0f);
             viewMatrix = Matrix.CreateLookAt(vEye, vDest, vUp);
             projMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewportWidth / viewportHeight, 1.0f, 5000.0f);
             buildViewFrustum();
@@ -163,6 +163,27 @@ namespace Water3D
         }
 
         /// <summary>
+        /// follow an object by keeping desiredPositionOffset, lookAtOffset, direction
+        /// of an object
+        /// </summary>
+        /// <param name="following">object to follow</param>
+        public void followObjective()
+        {
+            if (objective != null)
+            {
+                // Construct a matrix to transform from object space to worldspace
+                Matrix transform = Matrix.Identity;
+                transform.Forward = objective.ViewVector;
+                transform.Up = objective.UpVector;
+                transform.Right = Vector3.Cross(objective.UpVector, objective.ViewVector);
+
+                // Calculate desired camera properties in world space
+                vEye = objective.getPosition() + Vector3.TransformNormal(desiredPositionOffset, transform);
+                vDest = objective.getPosition() + Vector3.TransformNormal(lookAtOffset, transform);
+            }
+        }
+
+        /// <summary>
         /// zoom to or away from object
         /// </summary>
         /// <param name="following"></param>
@@ -178,26 +199,7 @@ namespace Water3D
             }
         }
 
-        /// <summary>
-        /// follow an object by keeping desiredPositionOffset, lookAtOffset, direction
-        /// of an object
-        /// </summary>
-        /// <param name="following">object to follow</param>
-        public void followObjective()
-        {
-            if(objective != null)
-            {
-                // Construct a matrix to transform from object space to worldspace
-                Matrix transform = Matrix.Identity;
-                transform.Forward = objective.ViewVector;
-                transform.Up = objective.UpVector;
-                transform.Right = Vector3.Cross(objective.UpVector, objective.ViewVector);
-
-                // Calculate desired camera properties in world space
-                vEye = objective.getPosition() + Vector3.TransformNormal(desiredPositionOffset, transform);
-                vDest = objective.getPosition() + Vector3.TransformNormal(lookAtOffset, transform);
-            }
-        }
+       
 
         /// <summary>
         /// follow an object by changing desiredPositionOffset, lookAtOffset, direction
@@ -362,7 +364,8 @@ namespace Water3D
                     break;
                 case "followFree":
                     float minimum1 = Math.Max(landscape.getHeight(VEye), plane.getPosition().Y);
-                    updateObject(minimum1 - 5.0f, true);
+                    updateObject(minimum1 - 5.0f , true);
+                    /*updateObject(getObjective().getPosition().Y + 0.5f);*/
                     break;
                 default:
                     updateObject(landscape.getHeight(VEye));

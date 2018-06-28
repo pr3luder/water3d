@@ -1074,24 +1074,28 @@ namespace Water3D
         public virtual void turnRight()
         {
             rotateObjectFollow(0.0f, -0.1f, 0.0f);
+            /*
             if (scene.Camera != null)
             {
                 scene.Camera.followObjective();
             }
+            */
         }
 
         public virtual void turnLeft()
         {
-            rotateObjectFollow(0.0f, 0.1f, 0.0f);
+            rotateObject(0.0f, 0.1f, 0.0f);
+            /*
             if (scene.Camera != null)
             {
                 scene.Camera.followObjective();
             }
+            */
         }
 
         public virtual void goForward()
         {
-            moveObject(0.0f, 0.0f, maxForwardSpeed);
+            moveObject(0.0f, 0.0f, -maxForwardSpeed);
             if (scene.Camera != null)
             {
                 scene.Camera.followObjective();
@@ -1100,7 +1104,7 @@ namespace Water3D
 
         public virtual void goBackwards()
         {
-            moveObject(0.0f, 0.0f, -maxBackwardSpeed);
+            moveObject(0.0f, 0.0f, maxBackwardSpeed);
             if (scene.Camera != null)
             {
                 scene.Camera.followObjective();

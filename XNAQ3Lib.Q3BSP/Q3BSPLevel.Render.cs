@@ -55,7 +55,7 @@ namespace XNAQ3Lib.Q3BSP
             Matrix matrixWorldViewProjection = worldMatrix * viewMatrix * projMatrix;
 
             graphics.DepthStencilState = DepthStencilState.Default;
-            graphics.RasterizerState = rStateCullNoneWireFrame;
+            /*raphics.RasterizerState = rStateCullNoneWireFrame;*/
             
             graphics.SetVertexBuffer(vertexBuffer);
 
@@ -79,8 +79,9 @@ namespace XNAQ3Lib.Q3BSP
 
         public void RenderLevelBSP(Vector3 cameraPosition, Matrix worldMatrix, Matrix viewMatrix, Matrix projMatrix, GameTime gameTime, GraphicsDevice graphics)
         {
-            //int cameraLeaf = GetCameraLeaf(Vector3.Transform(cameraPosition, Matrix.Invert(worldMatrix))); /* transform to world coords  */
-            int cameraLeaf = GetCameraLeaf(cameraPosition); /* transform to world coords  */
+            int cameraLeaf = GetCameraLeaf(Vector3.Transform(cameraPosition, Matrix.Invert(worldMatrix))); /* transform to world coords  */
+            //int cameraLeaf = GetCameraLeaf(Vector3.Transform(cameraPosition, worldMatrix));
+            //int cameraLeaf = GetCameraLeaf(cameraPosition); /* transform to world coords  */
             int cameraCluster = leafs[cameraLeaf].Cluster;
             CurrentCluster = cameraCluster;
             CurrentLeaf = cameraLeaf;
