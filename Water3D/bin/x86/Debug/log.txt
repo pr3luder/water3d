@@ -1,4 +1,4 @@
-[15.06.2018 17:09:56] Logging started.
+[27.07.2018 16:37:56] Logging started.
 Loading file q3dm1.bsp
 Entities loaded: True
 Texture entries found: 94

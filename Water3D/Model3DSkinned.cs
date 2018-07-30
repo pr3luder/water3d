@@ -43,6 +43,7 @@ namespace Water3D
 		{
             this.scene = scene;
             this.modelName = modelName;
+
             this.clip = clip;
             this.animate = false;
             this.jumping = false;
@@ -138,10 +139,11 @@ namespace Water3D
             //scene.Game.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
             //scene.Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             
-            boneTransforms = skinnedAnimationPlayer.GetSkinTransforms();    
+            boneTransforms = skinnedAnimationPlayer.GetSkinTransforms();
+            effectContainer.updateMutable(this);
             foreach (ModelMesh mesh in model.Meshes)
             {
-                effectContainer.updateMutable(this);
+               
                 foreach (Effect currentEffect in mesh.Effects)
                 {
                     if (currentEffect.GetType() == typeof(SkinnedEffect))
@@ -157,11 +159,7 @@ namespace Water3D
                 }
                 mesh.Draw();
                 Matrix world = Matrix.Identity;
-                if(!stop)
-                    world = boneTransforms[mesh.ParentBone.Index] * World;
-                else
-                    world = boneTransforms[mesh.ParentBone.Index] * WorldBounding;
-                
+                world = boneTransforms[mesh.ParentBone.Index] * World;
                 bs = bsLocal.Transform(world);
             }
             updateAnimation(time);

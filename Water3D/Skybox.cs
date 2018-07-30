@@ -90,6 +90,7 @@ namespace Water3D
             setRasterizerStates();
             setRenderStates();
 
+
             base.Draw(gameTime);
             // make the skybox be infinitely far away
             if (effectContainer.getEffect().GetType() == typeof(BasicEffect))
@@ -98,7 +99,6 @@ namespace Water3D
                 ((BasicEffect)effectContainer.getEffect()).View = scene.Camera.MView;
                 ((BasicEffect)effectContainer.getEffect()).Projection = scene.Camera.MProjection;
 
-                
                 ((BasicEffect)effectContainer.getEffect()).LightingEnabled = false;
                 ((BasicEffect)effectContainer.getEffect()).TextureEnabled = true;
                 

@@ -36,6 +36,7 @@ namespace Water3D
 		{
             this.scene = scene;
             this.modelName = modelName;
+
             this.saveHeight = pos.Y;
             /* load model */
             model = scene.Game.Content.Load<Model>(modelName);
@@ -51,11 +52,6 @@ namespace Water3D
         
         public override void Draw(GameTime time)
         {
-            
-            worldMatrix.Forward = viewVector;
-            worldMatrix.Right = rightVector;
-            worldMatrix.Up = upVector;
-            worldMatrix.Translation = pos;
             
             //worldMatrix = Matrix.CreateFromQuaternion(rotationQuat) * Matrix.CreateTranslation(pos);
             foreach (ModelMesh mesh in model.Meshes)

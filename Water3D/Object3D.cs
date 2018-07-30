@@ -38,7 +38,6 @@ namespace Water3D
         protected Vector3 oldPos;
         protected Vector3 scale;
 		protected Matrix worldMatrix;
-        protected Matrix worldMatrixBounding;
 		protected Matrix transMatrix;
         protected Matrix rotMatrix;
         protected Matrix scaleMatrix;
@@ -57,10 +56,6 @@ namespace Water3D
         protected BoundingBox bb;
         protected float currentTime;
         protected bool moving;
-        protected bool stop;
-        protected bool stopView;
-        protected bool stopRight;
-        protected bool stopUp;
         protected DebugDraw debugDraw;
         protected String mode;
         protected Model model;
@@ -99,7 +94,6 @@ namespace Water3D
             this.currentTime = 0.0f;
 
             this.worldMatrix = Matrix.Identity;
-            this.worldMatrixBounding = worldMatrix;
             this.transMatrix = Matrix.Identity;
             this.rotMatrix = Matrix.Identity;
             this.scaleMatrix = Matrix.CreateScale(scale);
@@ -112,7 +106,6 @@ namespace Water3D
             this.localViewVector = Vector3.Zero;
 
             this.moving = false;
-            this.stop = false;
             this.mode = "go";
 
             bs = new BoundingSphere();
@@ -289,40 +282,6 @@ namespace Water3D
             localViewVector.Y = transY;
             localViewVector.Z = transZ;
             
-            Vector3 p = pos;
-            
-            p.X += rightVector.X * transX * 10.0f;
-            p.Y += rightVector.Y * transX * 10.0f;
-            p.Z += rightVector.Z * transX * 10.0f;
-
-            p.X += upVector.X * transY * 10.0f;
-            p.Y += upVector.Y * transY * 10.0f;
-            p.Z += upVector.Z * transY * 10.0f;
-
-            p.X -= viewVector.X * transZ * 10.0f;
-            p.Y -= viewVector.Y * transZ * 10.0f;
-            p.Z -= viewVector.Z * transZ * 10.0f;
-
-            worldMatrixBounding.Forward = viewVector;
-            worldMatrixBounding.Right = rightVector;
-            worldMatrixBounding.Up = upVector;
-            worldMatrixBounding.Translation = p;
-
-            if(stopRight)
-            {
-                transX = 0.0f;
-            }
-
-            if(stopView)
-            {
-                transZ = 0.0f;
-            }
-
-            if(stopUp)
-            {
-                transY = 0.0f;
-            }
-
             pos.X += rightVector.X * transX;
             pos.Y += rightVector.Y * transX;
             pos.Z += rightVector.Z * transX;
@@ -368,11 +327,6 @@ namespace Water3D
             worldMatrix.Right = rightVector;
             worldMatrix.Up = upVector;
             worldMatrix.Translation = pos;
-
-            worldMatrixBounding.Forward = viewVector;
-            worldMatrixBounding.Right = rightVector;
-            worldMatrixBounding.Up = upVector;
-            worldMatrixBounding.Translation = pos;
 		}
 
         public virtual void scaleObject(float scaleX, float scaleY, float scaleZ)
@@ -422,7 +376,16 @@ namespace Water3D
                 moving = false;
             }
             oldPos = pos;
+
+            // do tranlations of whole object
+            worldMatrix.Forward = viewVector;
+            worldMatrix.Right = rightVector;
+            worldMatrix.Up = upVector;
+            worldMatrix.Translation = pos;
+
             base.Draw(gameTime);
+
+
 
         }
         public abstract void initVertexBuffer();
@@ -561,14 +524,6 @@ namespace Water3D
             get
             {
                 return Matrix.Multiply(scaleMatrix, worldMatrix);
-            }
-        }
-
-        public Matrix WorldBounding
-        {
-            get
-            {
-                return Matrix.Multiply(scaleMatrix, worldMatrixBounding);
             }
         }
 
@@ -974,39 +929,6 @@ namespace Water3D
             get
             {
                 return moving;
-            }
-        }
-
-        public bool Stop
-        {
-            get
-            {
-                return stop;
-            }
-            set
-            {
-                if (value == true)
-                {
-                    if (localViewVector.X != 0.0f)
-                    {
-                        stopRight = true;
-                    }
-                    if (localViewVector.Z != 0.0f)
-                    {
-                        stopView = true;
-                    }
-                    if (localViewVector.Y != 0.0f)
-                    {
-                        stopUp = true;
-                    }
-                }
-                else
-                {
-                    stopView = false;
-                    stopUp = false;
-                    stopRight = false;
-                }
-                stop = value;
             }
         }
 
