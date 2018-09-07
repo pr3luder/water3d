@@ -92,25 +92,10 @@ namespace Water3D
 
 
             base.Draw(gameTime);
-            // make the skybox be infinitely far away
-            if (effectContainer.getEffect().GetType() == typeof(BasicEffect))
-            {
-                ((BasicEffect)effectContainer.getEffect()).World = Matrix.CreateTranslation(scene.Camera.VEye);
-                ((BasicEffect)effectContainer.getEffect()).View = scene.Camera.MView;
-                ((BasicEffect)effectContainer.getEffect()).Projection = scene.Camera.MProjection;
-
-                ((BasicEffect)effectContainer.getEffect()).LightingEnabled = false;
-                ((BasicEffect)effectContainer.getEffect()).TextureEnabled = true;
-                
-                scene.Game.GraphicsDevice.Indices = null;
-                scene.Game.GraphicsDevice.SetVertexBuffer(vb);
-
-                drawIndexedPrimitives();
-                
-                ((BasicEffect)effectContainer.getEffect()).LightingEnabled = true;
-               
-            }
             
+            drawIndexedPrimitives();
+                
+
             resetSamplerStates();
             resetRasterizerStates();
             resetRenderStates();
@@ -125,6 +110,16 @@ namespace Water3D
 		{
             if (effectContainer.getEffect().GetType() == typeof(BasicEffect))
             {
+                // make the skybox be infinitely far away
+                ((BasicEffect)effectContainer.getEffect()).World = Matrix.CreateTranslation(scene.Camera.VEye);
+                ((BasicEffect)effectContainer.getEffect()).View = scene.Camera.MView;
+                ((BasicEffect)effectContainer.getEffect()).Projection = scene.Camera.MProjection;
+
+                ((BasicEffect)effectContainer.getEffect()).LightingEnabled = false;
+                ((BasicEffect)effectContainer.getEffect()).TextureEnabled = true;
+
+                scene.Game.GraphicsDevice.Indices = null;
+                scene.Game.GraphicsDevice.SetVertexBuffer(vb);
                 foreach (EffectPass pass in ((BasicEffect)effectContainer.getEffect()).CurrentTechnique.Passes)
                 {
                     pass.Apply();
@@ -142,7 +137,9 @@ namespace Water3D
                     scene.Game.GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 30, 2);
                     
                 }
+                ((BasicEffect)effectContainer.getEffect()).LightingEnabled = true;
             }
+            
 		}
 
 		public override float getTime()

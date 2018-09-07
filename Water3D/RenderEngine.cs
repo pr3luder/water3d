@@ -228,7 +228,7 @@ namespace Water3D
             
             float minimum = Math.Max(landscape.getHeight(camera.VEye), plane.getPosition().Y);
             
-            camera.Mode = "followFree";
+            camera.Mode = "follow";
             camera.setObjective(modelAnim);
             camera.followObjective();
             camera.updateObject(minimum - 1.0f, false);
@@ -535,7 +535,7 @@ namespace Water3D
             KeyboardState state = Keyboard.GetState();
             foreach (Keys key in state.GetPressedKeys())
             {
-                if (camera.Mode == "follow")
+                if (camera.getObjective().Mode == "fly")
                 {
                     if (key == Keys.W)
                     {
@@ -606,61 +606,27 @@ namespace Water3D
                             spacePressed = true;
                         }
                     }//jump
-                } 
-                else if (camera.Mode == "followFree")
+                }
+                else if (camera.getObjective().Mode == "go")
                 {
                     if (key == Keys.W)
                     {
                         camera.getObjective().goForward();
-                        /*
-                        camera.getObjective().moveObject(0.0f, 0.0f, 0.4f);
-                        camera.followObjective();
-                        if (camera.getObjective().GetType() == typeof(Model3DSkinned))
-                        {
-                            ((Model3DSkinned)camera.getObjective()).startAnimation();
-                        }
-                        */
                     }//forward
 
                     if (key == Keys.S)
                     {
-
-                        camera.getObjective().goBackwards();
-                        /*
-                        camera.getObjective().moveObject(0.0f, 0.0f, -0.4f);
-                        camera.followObjective();
-                        if (camera.getObjective().GetType() == typeof(Model3DSkinned))
-                        {
-                            ((Model3DSkinned)camera.getObjective()).startAnimation();
-                        }
-                        */
-                        
+                        camera.getObjective().goBackwards();  
                     }//back
 
                     if (key == Keys.A)
                     {
                         camera.getObjective().turnLeft();
-                        /*
-                        camera.getObjective().rotateObjectFollow(0.0f, 0.1f, 0.0f);
-                        camera.followObjective();
-                        if (camera.getObjective().GetType() == typeof(Model3DSkinned))
-                        {
-                            ((Model3DSkinned)camera.getObjective()).startAnimation();
-                        }
-                         * */
                     }//strafe left
 
                     if (key == Keys.D)
                     {
                         camera.getObjective().turnRight();
-                        /*
-                        camera.getObjective().rotateObjectFollow(0.0f, -0.1f, 0.0f);
-                        camera.followObjective();
-                        if (camera.getObjective().GetType() == typeof(Model3DSkinned))
-                        {
-                            ((Model3DSkinned)camera.getObjective()).startAnimation();
-                        }
-                        */
                     }//strafe right
 
                     if (key == Keys.R)
@@ -862,27 +828,23 @@ namespace Water3D
                             turningSpeedX = 0.0f;
                         }
                     }
-                    else if (camera.Mode == "followFree")
+                    else if (camera.getObjective().Mode == "go")
                     {
                         if (state.X - mouseSaveX < 0)
                         {
                             camera.getObjective().turnLeft();
-                            //camera.rotateAroundObjective(0.1f, camera.VUp);
                         }
                         if (state.X - mouseSaveX > 0)
                         {
                             camera.getObjective().turnRight();
-                            //camera.rotateAroundObjective(-0.1f, camera.VUp);
                         }
                         if (state.Y - mouseSaveY > 0)
                         {
                             camera.followObjective(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, -0.5f, 0.0f));
-                            //camera.rotateAroundObjective(0.2f, camera.VRight);
                         }
                         if (state.Y - mouseSaveY < 0)
                         {
                             camera.followObjective(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 0.5f, 0.0f));
-                            //camera.rotateAroundObjective(-0.2f, camera.VRight);
                         }
 
                     }

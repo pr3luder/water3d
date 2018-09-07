@@ -143,7 +143,6 @@ namespace Water3D
             effectContainer.updateMutable(this);
             foreach (ModelMesh mesh in model.Meshes)
             {
-               
                 foreach (Effect currentEffect in mesh.Effects)
                 {
                     if (currentEffect.GetType() == typeof(SkinnedEffect))

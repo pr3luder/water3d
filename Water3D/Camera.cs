@@ -46,7 +46,7 @@ namespace Water3D
 			this.vDest = vDest;
 			this.vUp = vUp;
             this.saveHeight = vEye.Y;
-            this.mode = "free";
+            this.mode = "follow";
             this.rotation = Quaternion.Identity;
             this.desiredPositionOffset = new Vector3(0.0f, -0.1f, 10.0f);
             this.lookAtOffset = new Vector3(0.0f, 0.0f, 0.0f);
@@ -361,6 +361,7 @@ namespace Water3D
                 case "follow":
                     float minimum = Math.Max(landscape.getHeight(VEye), plane.getPosition().Y);
                     updateObject(minimum - 5.0f, false);
+                    followObjective();
                     break;
                 case "followFree":
                     float minimum1 = Math.Max(landscape.getHeight(VEye), plane.getPosition().Y);
