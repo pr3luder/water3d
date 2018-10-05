@@ -50,6 +50,10 @@ namespace Water3D
         protected Vector3 rightVector;
         protected Vector3 upVector;
         protected Vector3 localViewVector;
+        protected Ray viewRay;
+        protected Ray rightRay;
+        protected Ray upRay;
+
         protected Random rand;
         protected Physics physics;
         protected BoundingSphere bs;
@@ -104,6 +108,10 @@ namespace Water3D
             this.rightVector = new Vector3(1.0f, 0.0f, 0.0f);
             this.upVector = new Vector3(0.0f, 1.0f, 0.0f);
             this.localViewVector = Vector3.Zero;
+
+            viewRay = new Ray(pos, viewVector);
+            rightRay = new Ray(pos, rightVector);
+            upRay = new Ray(pos, upVector);
 
             this.moving = false;
             this.mode = "go";
@@ -367,6 +375,7 @@ namespace Water3D
             debugDraw.DrawWireBox(BoundingBox, Color.Green);
             debugDraw.End();
             */
+            
             if (oldPos != pos)
             {
                 moving = true;
@@ -384,7 +393,6 @@ namespace Water3D
             worldMatrix.Translation = pos;
 
             base.Draw(gameTime);
-
 
 
         }
@@ -996,23 +1004,19 @@ namespace Water3D
         public virtual void turnRight()
         {
             rotateObjectFollow(0.0f, -0.1f, 0.0f);
-            /*
             if (scene.Camera != null)
             {
                 scene.Camera.followObjective();
             }
-            */
         }
 
         public virtual void turnLeft()
         {
             rotateObject(0.0f, 0.1f, 0.0f);
-            /*
             if (scene.Camera != null)
             {
                 scene.Camera.followObjective();
             }
-            */
             
         }
 

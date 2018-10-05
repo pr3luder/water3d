@@ -219,23 +219,20 @@ namespace Water3D
             modelAnim.setEffect(skinnedEffect);
             modelAnim.Mode = "go";
 
-            plane = new Plane3D(scene, new Vector3(-2048.0f, -0.1f, 2048.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), 8192.0f, 8192.0f);
+            /*
+            plane = new Plane3D(scene, new Vector3(-2048.0f, 0.0f, 2048.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), 8192.0f, 8192.0f);
             plane.setEffect(waterEffect);
+            */
 
-            water = new Water3D(scene, this, new Vector3(-2048.0f, -1.0f, 2048.0f), Matrix.Identity, new Vector3(5.0f, 1.0f, 5.0f), 32.0f, 32.0f, 64);
+            /* eigentliche Diplomarbeit */
+            water = new Water3D(scene, this, new Vector3(-2048.0f, 0.0f, 2048.0f), Matrix.Identity, new Vector3(5.0f, 1.0f, 5.0f), 32.0f, 32.0f, 64);
             water.setEffect(waterEffect);
            
             
-            float minimum = Math.Max(landscape.getHeight(camera.VEye), plane.getPosition().Y);
+            /* float minimum = Math.Max(landscape.getHeight(camera.VEye), plane.getPosition().Y); */
             
-            camera.Mode = "follow";
+            camera.Mode = "go";
             camera.setObjective(modelAnim);
-            camera.followObjective();
-            camera.updateObject(minimum - 1.0f, false);
-            camera.getObjective().PositionY = 70.0f;
-            camera.getObjective().PositionY = landscape.getHeight(camera.getObjective().getPosition()) + landscape.getPosition().Y;
-            camera.getObjective().moveObject(0.0f, 0.0f, -0.4f);
-            camera.followObjective();
             
             //modelAnim = new Model3DSkinned(game, camera, new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.05f, 0.05f, 0.05f), textureManager, "SkinnedModel.xml", "Models/dude", "Take 001");
             //modelAnim2 = new Model3DSkinned(game, camera, new Vector3(1300.0f, 5.0f, -1250.0f), new Vector3(0.05f, 0.05f, 0.05f), textureManager, "SkinnedModel.xml", "Models/dude", "Take 001");
@@ -244,7 +241,7 @@ namespace Water3D
 
             
             // quake 3 level
-            level = new Level3D(scene, new Vector3(1000.0f, 0.0f, -1000.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), false);
+            level = new Level3D(scene, new Vector3(2048.0f, 0.0f, 0.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), false);
             //level = new Level3D(scene, new Vector3(0.0f, 0.0f, 0.0f), Matrix.Identity, new Vector3(1.0f, 1.0f, 1.0f), false);
             
             /* old code
@@ -408,11 +405,6 @@ namespace Water3D
         {
             updateTime = gameTime;
             
-            if (landscape.GetType() == typeof(LandscapeGeomipmap))
-            {
-                landscape.Quadtree.updateObject(camera.getObjective().getPosition());
-            }
-
             if (camera.getObjective().Mode == "fly")
             { 
                 camera.getObjective().moveObjectQuaternion(moveSpeedX, moveSpeedY, moveSpeedZ);
@@ -453,7 +445,6 @@ namespace Water3D
                     camera.getObjective().PositionY = landscape.getHeight(camera.getObjective().getPosition()) + landscape.getPosition().Y;
                 }
             }
-            
             /*
             if(camera.getObjective().collides(level))
             {
@@ -759,13 +750,6 @@ namespace Water3D
                     }//strafe right
                 }
             }
-            if (state.IsKeyUp(Keys.W) && state.IsKeyUp(Keys.S) && state.IsKeyUp(Keys.A) && state.IsKeyUp(Keys.D))
-            {
-                if (camera.getObjective().GetType() == typeof(Model3DSkinned))
-                {
-                    ((Model3DSkinned)camera.getObjective()).stopAnimation();
-                }
-            }
             if (state.IsKeyUp(Keys.Space))
             {
                 spacePressed = false;
@@ -884,7 +868,7 @@ namespace Water3D
                         mouseRightPressed = true;
                     }
                 }
-                if (camera.Mode == "follow")
+                if (camera.Mode == "followFree")
                 {
                     if (wheelValue - wheelValueSave < 0)
                     {
@@ -899,7 +883,7 @@ namespace Water3D
                         //camera.followObject(camera.getObjective());
                     }
                 }
-                if (camera.Mode == "followFree")
+                if (camera.Mode == "go")
                 {
                     if (wheelValue - wheelValueSave < 0)
                     {

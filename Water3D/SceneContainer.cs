@@ -36,6 +36,7 @@ namespace Water3D
         private TextureRenderer reflect;
         private TextureRenderer refract;
         private TextureManager textureManager;
+        private float seaHeight = 0.0f;
         public SceneContainer(Camera camera, TextureManager textureManager)
             : base(RenderEngine.Game)
 		{
@@ -276,6 +277,14 @@ namespace Water3D
             get
             {
                 return refract;
+            }
+        }
+
+        public float SeaHeight
+        {
+            get
+            {
+                return seaHeight;
             }
         }
 	}

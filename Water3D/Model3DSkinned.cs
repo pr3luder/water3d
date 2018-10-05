@@ -81,10 +81,6 @@ namespace Water3D
             {
                 skinnedAnimationPlayer.Update(gameTime);
             }
-            else
-            {
-                //animationPlayer.Update();
-            }
         }
 
         public void startAnimation()
@@ -160,6 +156,15 @@ namespace Water3D
                 Matrix world = Matrix.Identity;
                 world = boneTransforms[mesh.ParentBone.Index] * World;
                 bs = bsLocal.Transform(world);
+            }
+            /* not tested */
+            if (!moving)
+            {
+                stopAnimation();
+            }
+            else
+            {
+                startAnimation();
             }
             updateAnimation(time);
             base.Draw(time);

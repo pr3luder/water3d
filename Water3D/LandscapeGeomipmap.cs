@@ -267,6 +267,7 @@ namespace Water3D
         public override void Draw(GameTime time)
         {
             base.Draw(time);
+            this.Quadtree.updateObject(this.getScene().getCamera().getObjective().getPosition());
             drawIndexedPrimitives();
         }
 

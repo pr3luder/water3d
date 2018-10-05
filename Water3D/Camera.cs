@@ -359,13 +359,13 @@ namespace Water3D
                     updateObject();
                     break;
                 case "follow":
-                    float minimum = Math.Max(landscape.getHeight(VEye), plane.getPosition().Y);
-                    updateObject(minimum - 5.0f, false);
+                    float minimum = Math.Max(landscape.getHeight(VEye), objective.Scene.SeaHeight);
+                    updateObject(minimum - 1.0f, true);
                     followObjective();
                     break;
                 case "followFree":
                     float minimum1 = Math.Max(landscape.getHeight(VEye), plane.getPosition().Y);
-                    updateObject(minimum1 - 5.0f , true);
+                    updateObject(minimum1 - 1.0f , true);
                     /*updateObject(getObjective().getPosition().Y + 0.5f);*/
                     break;
                 default:
